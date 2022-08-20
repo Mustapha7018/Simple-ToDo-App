@@ -6,7 +6,8 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 def home(request):
     todo_items = Todo.objects.all().order_by('-id')
-    return render(request, 'main/home.html', {'todo_items': todo_items})
+    context = {'todo_items': todo_items}
+    return render(request, 'main/home.html', context) 
 
 def add_todo(request):
     current_date = timezone.now()
