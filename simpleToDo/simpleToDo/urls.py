@@ -20,5 +20,7 @@ from mytodo import views
 urlpatterns = [
 
     path('', views.home, name='home'),
-    path('add_todo/', views.add_todo),
+    path('add_todo/', views.add_todo, name='add_todo'),
+    
+
  ]
